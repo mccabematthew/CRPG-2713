@@ -1,0 +1,43 @@
+name: CRPG Release CI Build
+# Main CI file for release running and testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+        # Compiles with error handling
+      - name: Compile the C program
+        run: |
+          gcc -o CRPG_2713 src/main.c src/functions.c
+          if [ $? -ne 0 ]; then
+            echo "❌ Compilation failed! Please check the code."
+            exit 1  # Stop workflow if compilation fails
+          fi
+
+        # Executes tests and outputs, error handling
+      - name: Run the program with input and capture output (CI/CD)
+        run: |
+          ./CRPG_2713 < tests/input.txt > tests/output.txt
+          if [ $? -ne 0 ]; then
+            echo "❌ The program crashed or returned an error!"
+            exit 1  # Stop workflow if execution fails
+          fi
+
+      - name: Create version tag
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          VERSION=$(git rev-list --count HEAD)
+          git tag -a "v$VERSION" -m "Release version $VERSION"
+          git push origin "v$VERSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
