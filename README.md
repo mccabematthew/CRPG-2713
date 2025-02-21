@@ -1,6 +1,6 @@
 # 🎮 **Turn-Based RPG Game - Champion's Gauntlet** 🏆
 
-Welcome to the **Turn-Based RPG Game**! In this game, you will witness two computer-controlled players battle each other’s champions in a strategic, turn-based showdown. Each champion is randomly assigned to one of three types: **MAGE**, **FIGHTER**, or **TANK**. These champions will face off in a series of rounds, with the ultimate winner being the one who accumulates the most points!
+Welcome to my **Turn-Based RPG Game**! In this game, you will witness two computer-controlled players battle each other’s champions in a strategic, turn-based showdown. Each champion is randomly assigned to one of three types: **MAGE**, **FIGHTER**, or **TANK**. These champions will face off in a series of rounds, with the ultimate winner being the one who accumulates the most points!
 
 ## ⚔️ **Game Rules**
 
