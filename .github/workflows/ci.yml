@@ -1,0 +1,46 @@
+name: CRPG for 2712 CI Project Build
+# The '|' symbol in github actions workflows denotes multi-line string or block scalar.
+# It lets you write multiline of a script or command in a single run step.
+
+on:
+  push:
+    branches:
+      - dev
+      - test
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can use any available GitHub runner
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      # Compile on github action runner servers (with error handling for failed comp)
+      - name: Compile the C program
+        run: |
+            gcc -o CRPG_2713 src/main.c src/functions.c
+            if [ $? -ne 0 ]; then
+              echo "Compilation failed! Please check the code."
+              exit 1
+            fi
+
+      # Run executable on github action runner servers (with error handling for failed exe)
+      - name: Run the program with input and capture output (CI/CD)
+        run: |
+          ./CRPG_2713 < tests/input.txt > tests/output.txt
+          if [ $? -ne 0 ]; then
+            echo "The program crashed or returned an error!"
+            exit 1
+          fi
+
+      # Add versioning only for main branch
+      - name: Create version tag
+        if: github.ref == 'refs/heads/main'  # Only tag on main branch
+        run: |
+          VERSION=$(git rev-list --count HEAD)  # Counts the number of commits and sets that as version
+          git tag -a "v$VERSION" -m "Release version $VERSION"
+          git push origin "v$VERSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Default GitHub token for versioning push access
