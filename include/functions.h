@@ -9,7 +9,6 @@ typedef enum {
 } CHAMPION;
 
 // Function prototypes
-
 CHAMPION createChampion ( );
 
 int getRandomNumber ( int min, int max );
