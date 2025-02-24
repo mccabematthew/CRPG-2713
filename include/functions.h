@@ -8,6 +8,7 @@ typedef enum {
     TANK
 } CHAMPION;
 
+
 // Function prototypes
 CHAMPION createChampion ( );
 
