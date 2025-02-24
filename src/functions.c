@@ -1,10 +1,13 @@
 #include "functions.h"
+#include <random>
 
 // TODO: Write Logic
 CHAMPION createChampion ( );
 
-// TODO: Write Logic
-int getRandomNumber ( int min, int max );
+// Computes random num between min and max
+int getRandomNumber ( int min, int max ) {
+    return rand() % (max - min + 1) + min;
+}
 
 // TODO: Write Logic
 int getChampionPoints ( CHAMPION c );
