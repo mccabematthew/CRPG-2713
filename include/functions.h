@@ -1,5 +1,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
+#include <stdio.h>
 
 // Player character types
 typedef enum {
