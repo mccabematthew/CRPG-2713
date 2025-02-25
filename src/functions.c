@@ -52,30 +52,24 @@ void printChampion ( CHAMPION c ) {
 */
 void playRound ( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points) {
-        p1_total; // don't reassign just sum... this is pointer
-        p2_total; // don't reassign just sum... this is pointer
+        int exampleValue = 0;
+
+        // p1_total; // don't reassign just sum... this is pointer
+        // p2_total; // don't reassign just sum... this is pointer
         c1 = createChampion();
-        c1_points;
         c2 = createChampion();
-        c2_points;
+        printf("ROUND 1:\n--------\n");
+        printf("Player points at the start of the round -- P1 = %d\tP2 = %d\n", exampleValue);
+        printf("Player points at the end of the round -- P1 = %d\tP2 = %d\n", exampleValue);
     }
 
+    // Sample Output
 
-    /* Champion rules table:
-
-            MAGE                            FIGHTER                         TANK
-    MAGE    Higher Points Wins              Higher Points Wins              Higher Points Wins            
-            Wins = gains their points       Wins = gains their points       Wins = gains their points
-            loses = loses points            loses = loses points            loses = loses points
-            tie = nothing happens           tie = nothing happens           tie = nothing happens
-
-    FIGHTER Higher Points Wins              Both Win and gain points        Higher Points Wins            
-            Wins = gains their points                                       Wins = gains their points
-            loses = no penalty                                              loses = loses points
-            tie = nothing happens                                           tie = nothing happens
-
-    TANK    Higher Points Wins              Higher Points Wins              Nothing Happens            
-            Wins = gains their points       Wins = gains their points       
-            loses = loses points            loses = loses points            
-            tie = nothing happens           tie = nothing happens           
-    */
+    // ROUND 1
+    // --------
+    // Player points at the start of the round  --  P1 = 0		P2 = 0
+    // P1 : MAGE-5	 vs 	P2 : FIGHTER-4
+    // Player 1 (MAGE) wins and gains their current points.
+    // Player 2 (FIGHTER) loses but with no penalty.
+    // Player points at the end of the round  --  P1 = 5		P2 = 0
+    
