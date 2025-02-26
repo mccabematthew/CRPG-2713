@@ -1,16 +1,49 @@
 #include "functions.h"
 
+/*
+ *  Dev: Matthew McCabe, mee749
+ *  CRPG-2317: An autonomous RPG that only requires round amount as input
+ * 
+ *  STEP 1: Create variables (pay attention to scope)
+ *      - for round amt
+ *      - to pass to playRound
+ *          - Define CHAMPION champions (use create champion)
+ *          - Define int points c1_points, int c2_points(init to 0 as we are using pointers to update)
+ *          - Define pointers int* p1_total, int* p2_total  
+ *  STEP 2: Take input for round amt and use for main game loop header
+ *  STEP 3: Perform fight using PlayRound()
+ * 
+*/
+
 int main() {
-    /*
-    
-    */
     int roundAmount = 0;
+    CHAMPION playerChampion1 = createChampion();
+    CHAMPION playerChampion2 = createChampion();
+    int champion1Points = 0;
+    int champion2Points = 0;
+    int* champion1PointTotal = champion1Points; // Pointers for dynamic updating within game loop
+    int* champion2PointTotal = champion2Points;
+
+
 
 
     printf("Enter the number of rounds: ");
     scanf("%d", &roundAmount);
 
-    // playRound();
+    // // Main game loop
+    // /*
+    //     What values do I want to update globally
+    // */
+    // for ( int i = 1; i < roundAmount + 1; i++) {
+    //     printf("ROUND %d:\n--------\n", i);
+    //     printf("Player points at the start of the round -- P1 = %d\tP2 = %d\n", champion1PointTotal, champion2PointTotal); // Should pointers go here?
+
+    //     // playRound updates vals
+    //     playRound(champion1PointTotal, champion2PointTotal, playerChampion1, 
+    //         champion1Points, playerChampion2, champion2Points); // Does battle logic and something else WIP
+
+    //     printf("Player points at the end of the round -- P1 = %d\tP2 = %d\n", champion1PointTotal, champion2PointTotal);
+    // }
 
 
     return 0;

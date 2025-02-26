@@ -43,24 +43,16 @@ void printChampion ( CHAMPION c ) {
 }
 
 /*
-    Takes all function values as input and creates pointer
-    value for points at start of round (for point dynamics as champions progress)
-    DOES NOT TAKE VALUE, VALS UPDATED DIRECTLY AS POINTERS LOL
-    STEP 1: Define champions (use create champion)
-    STEP 2: Assign points (use getChampionPoints)
-    STEP 3: Perform fight (compare weight of championPoints, assign winner)
+    Takes all function values that are declared globally in main (using above funcs)
+    STEP 1:Perform fight (compare weight of championPoints, assign winner)
+
 */
 void playRound ( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points) {
         int exampleValue = 0;
 
-        // p1_total; // don't reassign just sum... this is pointer
-        // p2_total; // don't reassign just sum... this is pointer
-        c1 = createChampion();
-        c2 = createChampion();
-        printf("ROUND 1:\n--------\n");
-        printf("Player points at the start of the round -- P1 = %d\tP2 = %d\n", exampleValue);
-        printf("Player points at the end of the round -- P1 = %d\tP2 = %d\n", exampleValue);
+        // Battle Logic
+
     }
 
     // Sample Output
