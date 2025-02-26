@@ -43,16 +43,15 @@ void printChampion ( CHAMPION c ) {
 }
 
 /*
-    Takes all function values that are declared globally in main (using above funcs)
-    STEP 1:Perform fight (compare weight of championPoints, assign winner)
+    Params are func vals that are declared globally in main
+    STEP 1: Perform fight (compare weight of championPoints, assign winner)
+    STEP 2: Reassign new points based on logic
 
 */
 void playRound ( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points) {
-        int exampleValue = 0;
-
-        // Battle Logic
-
+        /*some pseudo logic to think*/
+        
     }
 
     // Sample Output

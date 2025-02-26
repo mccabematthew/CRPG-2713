@@ -17,33 +17,42 @@
 
 int main() {
     int roundAmount = 0;
-    CHAMPION playerChampion1 = createChampion();
-    CHAMPION playerChampion2 = createChampion();
-    int champion1Points = 0;
-    int champion2Points = 0;
+    CHAMPION playerChampion1;
+    CHAMPION playerChampion2;
+    int champion1Points;
+    int champion2Points;
     int* champion1PointTotal = champion1Points; // Pointers for dynamic updating within game loop
     int* champion2PointTotal = champion2Points;
 
 
 
 
-    printf("Enter the number of rounds: ");
+    printf("Enter the number of rounds: "); 
     scanf("%d", &roundAmount);
 
     // // Main game loop
     // /*
     //     What values do I want to update globally
     // */
-    // for ( int i = 1; i < roundAmount + 1; i++) {
-    //     printf("ROUND %d:\n--------\n", i);
-    //     printf("Player points at the start of the round -- P1 = %d\tP2 = %d\n", champion1PointTotal, champion2PointTotal); // Should pointers go here?
+    for ( int i = 1; i < roundAmount + 1; i++) {
+        playerChampion1 = createChampion(); // Creates new champions for players every round
+        playerChampion2 = createChampion();
+        champion1Points =  getChampionPoints(playerChampion1); // Reassigns respective strength points every round
+        champion2Points = getChampionPoints(playerChampion2);
 
-    //     // playRound updates vals
-    //     playRound(champion1PointTotal, champion2PointTotal, playerChampion1, 
-    //         champion1Points, playerChampion2, champion2Points); // Does battle logic and something else WIP
 
-    //     printf("Player points at the end of the round -- P1 = %d\tP2 = %d\n", champion1PointTotal, champion2PointTotal);
-    // }
+
+        printf("ROUND %d:\n--------\n", i);
+        printf("Player points at  the start of the round -- P1 = %d\tP2 = %d\n", 
+            champion1PointTotal, champion2PointTotal); // Should pointers go here?
+        printf("P1: %s-%d vs  P2: %s-%d", printChampion(playerChampion1), champion1Points, printChampion(playerChampion1), champion2Points); // use print champion toget output given in test cases for Champion
+        
+        // // playRound updates vals
+        // playRound(champion1PointTotal, champion2PointTotal, playerChampion1, 
+        //     champion1Points, playerChampion2, champion2Points); // Does battle logic and something else WIP
+
+        printf("Player points at the end of the round -- P1 = %d\tP2 = %d\n", champion1PointTotal, champion2PointTotal);
+    }
 
 
     return 0;
