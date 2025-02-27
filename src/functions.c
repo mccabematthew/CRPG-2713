@@ -2,43 +2,53 @@
 #include <stdlib.h>
 
 // Create champion (randomly pick from structs default int assignment) 
-CHAMPION createChampion ( ) {
-    CHAMPION c = rand() % 3;
+CHAMPION createChampion( ) 
+{
+    CHAMPION c = rand( ) % 3;
     return c;
 }
 
 // Computes random num between min and max
-int getRandomNumber ( int min, int max ) {
-    return rand() % (max - min + 1) + min;
+int getRandomNumber( int min, int max ) 
+{
+    return rand( ) % ( max - min + 1 ) + min;
 }
 
 // Assign points based on probabilities given
-int getChampionPoints ( CHAMPION c ) {
+int getChampionPoints( CHAMPION c ) 
+{
     int championPoints = 0;
 
-    if (c == MAGE) {
-        championPoints = rand() % (8 - 1 + 1) + 1;
+    if( c == MAGE ) 
+    {
+        championPoints = rand( ) % ( 8 - 1 + 1 ) + 1;
     }
-    else if (c == FIGHTER) {
-        championPoints = rand() % (7 - 3 + 1) + 3;
+    else if( c == FIGHTER ) 
+    {
+        championPoints = rand( ) % ( 7 - 3 + 1 ) + 3;
     }
-    else if (c == TANK) {
-        championPoints = rand() % (9 - 5 + 1) + 5;
+    else if( c == TANK ) 
+    {
+        championPoints = rand( ) % ( 9 - 5 + 1 ) + 5;
     }
 
     return championPoints;
 }
 
 // Prints string of the passed enum champion type
-void printChampion ( CHAMPION c ) {
-    if (c == MAGE) {
-        printf("MAGE");
+void printChampion( CHAMPION c ) 
+{
+    if( c == MAGE ) 
+    {
+        printf( "MAGE" );
     }
-    else if (c == FIGHTER) {
-        printf("FIGHTER");
+    else if( c == FIGHTER ) 
+    {
+        printf( "FIGHTER" );
     }
-    else if (c == TANK) {
-        printf("TANK");
+    else if( c == TANK ) 
+    {
+        printf( "TANK" );
     }
 }
 
@@ -48,8 +58,9 @@ void printChampion ( CHAMPION c ) {
     STEP 2: Reassign new points based on logic
 
 */
-void playRound ( int* p1_total, int* p2_total, CHAMPION c1, 
-    int c1_points, CHAMPION c2, int c2_points) {
+void playRound( int* p1_total, int* p2_total, CHAMPION c1, 
+    int c1_points, CHAMPION c2, int c2_points ) 
+    {
         /*some pseudo logic to think*/
         
     }
@@ -63,4 +74,3 @@ void playRound ( int* p1_total, int* p2_total, CHAMPION c1,
     // Player 1 (MAGE) wins and gains their current points.
     // Player 2 (FIGHTER) loses but with no penalty.
     // Player points at the end of the round  --  P1 = 5		P2 = 0
-    

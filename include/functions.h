@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 // Player character types
-typedef enum {
+typedef enum 
+{
     MAGE,
     FIGHTER,
     TANK
