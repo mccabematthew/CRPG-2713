@@ -5,7 +5,7 @@
  *  Assignment: CRPG-2317 An autonomous RPG that only requires round amount as input
  *  Dev: Matthew McCabe, mee749
  *  
- *  Description:
+ *  Description:                                                                WIP WIP WIP WIP
  *  STEP 1: Create variables (pay attention to scope)
  *      - for round amt
  *      - to pass to playRound
@@ -17,6 +17,19 @@
  * 
 */
 
+/*
+ *  Function: main
+ *  -------------------
+ *  Description: 
+ *      Utilizes functions prototyped in functions.h, and defined in functions.c
+ *      in order to create a game loop. The game is an automated RPG that takes
+ *      user input for amount of rounds and then plays rounds where "Champions" 
+ *      engage in "combat" and the winner's points are added to their total at 
+ *      the end of each round. Round and player informationn is output until the
+ *      game reaches the user determined final round at which point the winner
+ *      is declared and "GAME OVER!!" is shown.
+ *  Returns: 0
+*/
 int main( ) 
 {
     int roundAmount = 0;
