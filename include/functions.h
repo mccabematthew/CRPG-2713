@@ -2,6 +2,16 @@
 #define FUNCTIONS_H
 #include <stdio.h>
 
+/*
+ *  File Name: functions.h
+ *  Assignment: CRPG-2317 An autonomous RPG that only requires round amount as input
+ *  Dev: Matthew McCabe, mee749
+ *  
+ *  Description:
+ *  Add function prototypes as given in assignment doc
+ * 
+*/
+
 // Player character types
 typedef enum 
 {

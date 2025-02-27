@@ -1,9 +1,11 @@
 #include "functions.h"
 
 /*
+ *  File Name: main.c
+ *  Assignment: CRPG-2317 An autonomous RPG that only requires round amount as input
  *  Dev: Matthew McCabe, mee749
- *  CRPG-2317: An autonomous RPG that only requires round amount as input
- * 
+ *  
+ *  Description:
  *  STEP 1: Create variables (pay attention to scope)
  *      - for round amt
  *      - to pass to playRound

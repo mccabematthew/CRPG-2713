@@ -1,6 +1,17 @@
 #include "functions.h"
 #include <stdlib.h>
 
+/*
+ *  File Name: functions.c
+ *  Assignment: CRPG-2317 An autonomous RPG that only requires round amount as input
+ *  Dev: Matthew McCabe, mee749
+ * 
+ *  
+ *  Description:
+ *  Defines all functions from protoypes in functions.h
+ * 
+*/
+
 // Create champion (randomly pick from structs default int assignment) 
 CHAMPION createChampion( ) 
 {
@@ -60,10 +71,10 @@ void printChampion( CHAMPION c )
 */
 void playRound( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points ) 
-    {
-        /*some pseudo logic to think*/
+{
+    /*some pseudo logic to think*/
         
-    }
+}
 
     // Sample Output
 
