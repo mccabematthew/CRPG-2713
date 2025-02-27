@@ -9,9 +9,7 @@
  *  
  *  Description:
  *  Defines all functions from protoypes in functions.h
- * 
 */
-
 
 /*
  *  Function: createChampion
