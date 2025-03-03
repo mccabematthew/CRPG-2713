@@ -49,15 +49,15 @@ int getChampionPoints( CHAMPION c )
 
     if( c == MAGE ) 
     {
-        championPoints = rand( ) % ( 8 - 1 + 1 ) + 1;
+        championPoints = getRandomNumber( 1, 8 );
     }
     else if( c == FIGHTER ) 
     {
-        championPoints = rand( ) % ( 7 - 3 + 1 ) + 3;
+        championPoints = getRandomNumber( 3, 7 );
     }
     else if( c == TANK ) 
     {
-        championPoints = rand( ) % ( 9 - 5 + 1 ) + 5;
+        championPoints = getRandomNumber( 5, 9 );
     }
 
     return championPoints;

@@ -46,6 +46,7 @@ int main( )
     scanf( "%d", &roundAmount );
     printf( "\n" ); 
     
+    // Game loop
     for( i = 1; i < roundAmount + 1; i++ )
     {
         playerChampion1 = createChampion( ); // Creates new champions for players every round
