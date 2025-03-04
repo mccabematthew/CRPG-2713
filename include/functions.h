@@ -17,7 +17,7 @@ typedef enum
  *  Description: Create champion (randomly pick from structs default int assignment) 
  *  Returns: One of the three champion types
 */
-CHAMPION createChampion ( );
+CHAMPION createChampion( );
 
 /*
  *  Function: getRandomNumber
@@ -27,7 +27,7 @@ CHAMPION createChampion ( );
  *      max: Maximum value
  *  Returns: Random number
 */
-int getRandomNumber ( int min, int max );
+int getRandomNumber( int min, int max );
 
 /*
  *  Function: getChampionPoints
@@ -36,7 +36,7 @@ int getRandomNumber ( int min, int max );
  *      c: Champion value
  *  Returns: championPoints - A random number within the given probabilities
 */
-int getChampionPoints ( CHAMPION c );
+int getChampionPoints( CHAMPION c );
 
 /*
  *  Function: printChampion
@@ -45,7 +45,7 @@ int getChampionPoints ( CHAMPION c );
  *      c: Champion value
  *  Returns: Nothing
 */
-void printChampion ( CHAMPION c );
+void printChampion( CHAMPION c );
 
 /*
  *  Function: playRound
@@ -62,7 +62,7 @@ void printChampion ( CHAMPION c );
  *      c2_points: Player two's current round points (to be updated at end)
  *  Returns: Nothing
 */
-void playRound ( int* p1_total, int* p2_total, CHAMPION c1, 
+void playRound( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points);
 
 

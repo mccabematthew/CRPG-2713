@@ -104,7 +104,43 @@ void printChampion( CHAMPION c )
 void playRound( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points ) 
 {
-    /*some pseudo logic to think*/
+    // Mage v Mage Logic
+    if( c1 = MAGE && c2 == MAGE ) 
+    {
+        if(c1_points > c2_points) // c1 wins and gains points, c2 loses their points
+        {
+            p1_total = p1_total + c1_points;
+            p2_total = p2_total - c2_points;
+        }
+        else if(c1_points < c2_points) // c2 wins and gains points, c1 loses their points
+        {
+            p2_total = p2_total + c2_points;
+            p1_total = p1_total - c1_points;
+        }
+        else
+        {
+            printf("Mage fight, something else happened");
+        }
+    }
+
+    // Fighter v Fighter Logic
+    if( c1 = FIGHTER && c2 == FIGHTER ) 
+    {
+        if(c1_points > c2_points) // c1 wins and gains points, c2 loses their points
+        {
+            p1_total = p1_total + c1_points;
+            p2_total = p2_total - c2_points;
+        }
+        else if(c1_points < c2_points) // c2 wins and gains points, c1 loses their points
+        {
+            p2_total = p2_total + c2_points;
+            p1_total = p1_total - c1_points;
+        }
+        else
+        {
+            printf("Mage fight, something else happened");
+        }
+    }
         
 }
 
