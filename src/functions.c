@@ -104,42 +104,110 @@ void printChampion( CHAMPION c )
 void playRound( int* p1_total, int* p2_total, CHAMPION c1, 
     int c1_points, CHAMPION c2, int c2_points ) 
 {
-    // Mage v Mage Logic
-    if( c1 = MAGE && c2 == MAGE ) 
+        // Mage vs Mage Logic
+    if( c1 == MAGE && c2 == MAGE ) 
     {
         if(c1_points > c2_points) // c1 wins and gains points, c2 loses their points
         {
-            p1_total = p1_total + c1_points;
-            p2_total = p2_total - c2_points;
+            *p1_total = *p1_total + c1_points;
+            *p2_total = *p2_total - c2_points;
+            if(*p2_total < 0) *p2_total = 0; // Ensure points don't go negative
+            printf("Player 1 (MAGE) wins and gains their current points.\n");
+            printf("Player 2 (MAGE) loses their current points.\n");
         }
         else if(c1_points < c2_points) // c2 wins and gains points, c1 loses their points
         {
-            p2_total = p2_total + c2_points;
-            p1_total = p1_total - c1_points;
+            *p2_total = *p2_total + c2_points;
+            *p1_total = *p1_total - c1_points;
+            if(*p1_total < 0) *p1_total = 0; // Ensure points don't go negative
+            printf("Player 1 (MAGE) loses their current points.\n");
+            printf("Player 2 (MAGE) wins and gains their current points.\n");
         }
-        else
+        else // Tie
         {
-            printf("Mage fight, something else happened");
+            *p1_total = *p1_total + c1_points;
+            *p2_total = *p2_total + c2_points;
+            printf("Both players gain their current points.\n");
         }
     }
-
-    // Fighter v Fighter Logic
-    if( c1 = FIGHTER && c2 == FIGHTER ) 
+    
+    // Fighter vs Fighter Logic
+    else if( c1 == FIGHTER && c2 == FIGHTER ) 
     {
-        if(c1_points > c2_points) // c1 wins and gains points, c2 loses their points
+        *p1_total = *p1_total + c1_points;
+        *p2_total = *p2_total + c2_points;
+        printf("Both players gain their current points.\n");
+    }
+    
+    // Tank vs Tank Logic  
+    else if( c1 == TANK && c2 == TANK )
+    {
+        if(c1_points > c2_points)
         {
-            p1_total = p1_total + c1_points;
-            p2_total = p2_total - c2_points;
+            *p1_total = *p1_total + c1_points;
+            printf("Player 1 (TANK) wins and gains their current points.\n");
+            printf("Player 2 (TANK) loses but with no penalty.\n");
         }
-        else if(c1_points < c2_points) // c2 wins and gains points, c1 loses their points
+        else if(c1_points < c2_points)
         {
-            p2_total = p2_total + c2_points;
-            p1_total = p1_total - c1_points;
+            *p2_total = *p2_total + c2_points;
+            printf("Player 1 (TANK) loses but with no penalty.\n");
+            printf("Player 2 (TANK) wins and gains their current points.\n");
         }
-        else
+        else // Tie
         {
-            printf("Mage fight, something else happened");
+            printf("Neither player gains points.\n");
         }
+    }
+    
+    // Mage vs Fighter Logic
+    else if( c1 == MAGE && c2 == FIGHTER )
+    {
+        *p1_total = *p1_total + c1_points;
+        printf("Player 1 (MAGE) wins and gains their current points.\n");
+        printf("Player 2 (FIGHTER) loses but with no penalty.\n");
+    }
+    else if( c1 == FIGHTER && c2 == MAGE )
+    {
+        *p2_total = *p2_total + c2_points;
+        printf("Player 1 (FIGHTER) loses but with no penalty.\n");
+        printf("Player 2 (MAGE) wins and gains their current points.\n");
+    }
+    
+    // Mage vs Tank Logic
+    else if( c1 == MAGE && c2 == TANK )
+    {
+        *p1_total = *p1_total + c1_points;
+        *p2_total = *p2_total - c2_points;
+        if(*p2_total < 0) *p2_total = 0; // Ensure points don't go negative
+        printf("Player 1 (MAGE) wins and gains their current points.\n");
+        printf("Player 2 (TANK) loses their current points.\n");
+    }
+    else if( c1 == TANK && c2 == MAGE )
+    {
+        *p2_total = *p2_total + c2_points;
+        *p1_total = *p1_total - c1_points;
+        if(*p1_total < 0) *p1_total = 0; // Ensure points don't go negative
+        printf("Player 1 (TANK) loses their current points.\n");
+        printf("Player 2 (MAGE) wins and gains their current points.\n");
+    }
+    
+    // Fighter vs Tank Logic
+    else if( c1 == FIGHTER && c2 == TANK )
+    {
+        *p1_total = *p1_total + c1_points;
+        *p2_total = *p2_total - c2_points;
+        if(*p2_total < 0) *p2_total = 0; // Ensure points don't go negative
+        printf("Player 1 (FIGHTER) wins and gains their current points.\n");
+        printf("Player 2 (TANK) loses their current points.\n");
+    }
+    else if( c1 == TANK && c2 == FIGHTER )
+    {
+        *p2_total = *p2_total + c2_points;
+        *p1_total = *p1_total - c1_points;
+        if(*p1_total < 0) *p1_total = 0; // Ensure points don't go negative
+        printf("Player 1 (TANK) loses their current points.\n");
+        printf("Player 2 (FIGHTER) wins and gains their current points.\n");
     }
         
 }

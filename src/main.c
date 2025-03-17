@@ -41,6 +41,8 @@ int main( )
     int championOnePointTotal = 0;
     int championTwoPointTotal = 0;
 
+    // Seed random number generator
+    srand(time(NULL));
 
     printf( "Enter the number of rounds: " ); 
     scanf( "%d", &roundAmount );
@@ -51,28 +53,40 @@ int main( )
     {
         playerChampion1 = createChampion( ); // Creates new champions for players every round
         playerChampion2 = createChampion( );
-        championOnePoints =  getChampionPoints( playerChampion1 ); // Reassigns respective strength points every round
+        championOnePoints = getChampionPoints( playerChampion1 ); // Reassigns respective strength points every round
         championTwoPoints = getChampionPoints( playerChampion2 );
 
-        printf( "ROUND %d:\n--------\n", i );
-        printf( "Player points at the start of the round -- P1 = %d\tP2 = %d\n", 
+        printf( "ROUND %d\n--------\n", i );
+        printf( "Player points at the start of the round  --  P1 = %d\t\tP2 = %d\n", 
             championOnePointTotal, championTwoPointTotal ); // Show initial rounds points
-        // printf( "P1: %s-%d vs  P2: %s-%d", playerChampion1, championOnePoints, playerChampion2, championTwoPoints ); // use print champion toget output given in test cases for Champion
-        // // playRound updates vals
-        // playRound( &championOnePointTotal, &championTwoPointTotal, playerChampion1, 
-        //     champion1Points, playerChampion2, champion2Points ); // Does battle logic and passes reference into pointer param for global update WIP
+        
+        // Display champion information
+        printf( "P1 : " );
+        printChampion(playerChampion1);
+        printf("-%d\t vs \tP2 : ", championOnePoints);
+        printChampion(playerChampion2);
+        printf("-%d\n", championTwoPoints);
+        
+        // Play the round and update points
+        playRound(&championOnePointTotal, &championTwoPointTotal, playerChampion1, 
+            championOnePoints, playerChampion2, championTwoPoints);
 
-        printf( "Player points at the end of the round -- P1 = %d \tP2 = %d\n", championOnePointTotal, championTwoPointTotal ); // Updated total points
+        printf( "Player points at the end of the round  --  P1 = %d\t\tP2 = %d\n", 
+            championOnePointTotal, championTwoPointTotal ); // Updated total points
         printf( "\n" ); 
     }
 
-    if( i == roundAmount ) 
-    {
-        printf("GAME OVER!!");
-        // WIP: printf("%s", winnerVariable);
+    printf("GAME OVER!!\n");
+    if(championOnePointTotal > championTwoPointTotal) {
+        printf("P1 Won\n");
+    } else if(championTwoPointTotal > championOnePointTotal) {
+        printf("P2 Won\n");
+    } else {
+        printf("It's a tie!\n");
     }
 
     return 0;
+    
 }
 
 // Sample Output
